@@ -132,7 +132,7 @@ function formatDate(dateString) {
 function setupCopyEmail() {
     const copyBtn = document.getElementById('copy-email');
     const emailLink = document.getElementById('contact-email');
-    const email = emailLink.textContent;
+    const email = 'jimjin135@gmail.com';
     
     copyBtn.addEventListener('click', async () => {
         try {
