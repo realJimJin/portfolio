@@ -1,47 +1,89 @@
-import { siteConfig } from "@/data/projects";
+"use client";
 
-export default function Hero() {
+import { ArrowRight, Download } from "lucide-react";
+import { PERSONAL_INFO } from "@/data/projects";
+import { Button } from "./ui/Button";
+import { Container } from "./ui/Container";
+import { motion } from "motion/react";
+
+export function Hero() {
   return (
-    <section
-      id="home"
-      className="min-h-[90vh] flex items-center justify-center px-6 pt-24 pb-16"
-    >
-      <div className="max-w-2xl text-center">
-        <p className="text-sm font-medium tracking-widest uppercase text-gray-400 mb-4">
-          {siteConfig.role}
-        </p>
-        <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-gray-900 mb-6">
-          {siteConfig.name}
-        </h1>
-        <p className="text-lg text-gray-600 leading-relaxed mb-10 max-w-xl mx-auto">
-          {siteConfig.summary}
-        </p>
-        <div className="flex flex-wrap items-center justify-center gap-4">
-          <a
-            href={siteConfig.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-lg bg-gray-900 px-5 py-2.5 text-sm font-medium text-white hover:bg-gray-800 transition-colors"
-          >
-            <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
-            </svg>
-            GitHub
-          </a>
-          <a
-            href={siteConfig.resumeUrl}
-            className="inline-flex items-center gap-2 rounded-lg border border-gray-300 px-5 py-2.5 text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors"
-          >
-            Resume
-          </a>
-          <a
-            href="#contact"
-            className="inline-flex items-center gap-2 rounded-lg border border-gray-300 px-5 py-2.5 text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors"
-          >
-            Contact
-          </a>
-        </div>
+    <section id="hero" className="relative h-screen flex items-center justify-center overflow-hidden pt-16">
+      <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-50/90 via-slate-50/80 to-slate-100/90 dark:from-slate-950/90 dark:via-slate-950/80 dark:to-slate-900/90 z-10" />
+        <div className="w-full h-full bg-slate-100 dark:bg-slate-900 opacity-20 dark:opacity-10" />
       </div>
+
+      <Container className="relative z-10">
+        <div className="flex flex-col items-center text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="inline-flex items-center rounded-full px-3 py-1 text-sm font-medium text-indigo-600 bg-indigo-50 dark:text-indigo-400 dark:bg-indigo-950/30 mb-6 border border-indigo-100 dark:border-indigo-900/50"
+          >
+            <span>Available for new opportunities</span>
+          </motion.div>
+
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-slate-900 dark:text-slate-50 mb-6"
+          >
+            Hi, I&apos;m <span className="text-indigo-600 dark:text-indigo-400">{PERSONAL_INFO.name}</span>
+            <br />
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-slate-900 to-slate-600 dark:from-slate-100 dark:to-slate-400">
+              {PERSONAL_INFO.title}
+            </span>
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="text-lg md:text-xl text-slate-600 dark:text-slate-400 max-w-2xl mb-10 leading-relaxed"
+          >
+            {PERSONAL_INFO.subtitle}
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto"
+          >
+            <Button
+              size="lg"
+              className="group cursor-pointer"
+              onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })}
+            >
+              View Projects
+              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+            </Button>
+            <Button
+              variant="outline"
+              size="lg"
+              className="cursor-pointer"
+              onClick={() => window.open(PERSONAL_INFO.resumeUrl, "_blank")}
+            >
+              Download Resume
+              <Download className="ml-2 h-4 w-4" />
+            </Button>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 0.8 }}
+            className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce hidden md:block"
+          >
+            <div className="w-6 h-10 border-2 border-slate-400 dark:border-slate-600 rounded-full flex justify-center pt-2">
+              <div className="w-1.5 h-1.5 bg-slate-400 dark:bg-slate-600 rounded-full animate-scroll" />
+            </div>
+          </motion.div>
+        </div>
+      </Container>
     </section>
   );
 }

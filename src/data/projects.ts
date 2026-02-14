@@ -1,108 +1,110 @@
-export interface Project {
-  id: string;
-  title: string;
-  summary: string;
-  bullets: string[];
-  techStack: string[];
-  links: { label: string; url: string }[];
-  tags: string[];
-  image?: string;
-  category: "opensource" | "freelance" | "project";
-}
+import { Github, Linkedin, Mail, Layout, Server, Database, Cpu } from "lucide-react";
 
-export const projects: Project[] = [
+export const PERSONAL_INFO = {
+  name: "Jim Jin",
+  title: "Software Engineer",
+  subtitle:
+    "I build reliable, user-facing software and contribute to open-source chess infrastructure. Looking for entry-level SWE roles where I can ship product and grow fast.",
+  bio: "I'm a software engineer who loves building things that people actually use. My strongest work lives at the intersection of full-stack web development and open-source contribution. I've contributed 10+ merged PRs to Lichess, the largest free chess platform, working across Scala and TypeScript codebases. I've also shipped a production marketplace app for a freelance client and built data-driven dashboards and team management tools.",
+  location: "Boston, MA",
+  email: "jimjin135@gmail.com",
+  resumeUrl: "/Jim_Jin_Resume_2026.pdf",
+  social: [
+    {
+      name: "GitHub",
+      url: "https://github.com/realJimJin",
+      icon: Github,
+    },
+    {
+      name: "LinkedIn",
+      url: "https://www.linkedin.com/in/guixuanjin/",
+      icon: Linkedin,
+    },
+    {
+      name: "Email",
+      url: "mailto:jimjin135@gmail.com",
+      icon: Mail,
+    },
+  ],
+};
+
+export const SKILLS = [
   {
-    id: "lichess",
-    title: "Lichess — Open-Source Contributor",
-    summary:
-      "Active contributor to Lichess, the largest free and open-source chess platform serving 10M+ monthly users.",
-    bullets: [
-      "Merged 10+ pull requests across the Scala/Play backend and TypeScript frontend, improving UI components and game logic.",
-      "Collaborated asynchronously with maintainers via GitHub code reviews, following strict contribution guidelines.",
-      "Gained deep familiarity with large-scale functional Scala codebases, MongoDB aggregation pipelines, and real-time WebSocket architecture.",
-    ],
-    techStack: ["Scala", "Play Framework", "TypeScript", "MongoDB", "WebSockets"],
-    links: [
-      { label: "GitHub Profile", url: "https://github.com/realJimJin" },
-      {
-        label: "Lichess PRs",
-        url: "https://github.com/lichess-org/lila/pulls?q=is%3Apr+author%3ArealJimJin",
-      },
-    ],
-    tags: ["open-source", "chess", "scala", "typescript"],
-    category: "opensource",
+    category: "Frontend",
+    icon: Layout,
+    items: ["React", "TypeScript", "Next.js", "Tailwind CSS", "HTML/CSS", "JavaScript"],
   },
   {
-    id: "hublyst",
-    title: "Hublyst.pro — Boston Sublet & Roommate Marketplace",
-    summary:
-      "Designed and shipped a full-stack marketplace web app connecting Boston-area renters with verified sublets and roommates.",
-    bullets: [
-      "Built end-to-end with Django and PostgreSQL — from auth flows to listing CRUD, search/filter, and messaging.",
-      "Implemented responsive, mobile-first UI with Django templates and deployed to production with CI/CD.",
-      "Developed image upload pipeline and integrated key marketplace features including user profiles and listing management.",
-    ],
-    techStack: [
-      "Django",
-      "Python",
-      "PostgreSQL",
-      "HTML/CSS",
-      "JavaScript",
-    ],
-    links: [{ label: "Live Site", url: "https://hublyst.pro" }],
-    tags: ["freelance", "full-stack", "marketplace", "django"],
-    image: "/images/hublyst.png",
-    category: "freelance",
+    category: "Backend",
+    icon: Server,
+    items: ["Node.js", "Express", "Python", "Django", "Scala", "REST APIs"],
   },
   {
-    id: "imlem",
-    title: "IMLEM Team Manager",
-    summary:
-      "Web application for managing Intermediate Math League of Eastern Massachusetts teams, schedules, and scoring.",
-    bullets: [
-      "Developed a React + Node.js app with role-based auth for coaches, enabling roster management and real-time score tracking.",
-      "Designed a normalized PostgreSQL schema for teams, students, meets, and individual/team round scores.",
-      "Deployed with Docker Compose and wrote integration tests covering core scoring and roster workflows.",
-    ],
-    techStack: ["React", "Node.js", "Express", "PostgreSQL", "Docker"],
-    links: [
-      {
-        label: "GitHub",
-        url: "https://github.com/realJimJin/imlem-team-manager",
-      },
-    ],
-    tags: ["project", "full-stack", "react", "node"],
-    category: "project",
+    category: "Database",
+    icon: Database,
+    items: ["PostgreSQL", "MongoDB", "Prisma", "Redis"],
   },
   {
-    id: "dashboards",
-    title: "QuickBooks Dashboard Prototype",
-    summary:
-      "Interactive analytics dashboard prototype for visualizing small-business financial data from QuickBooks exports.",
-    bullets: [
-      "Built a responsive React dashboard with Chart.js for P&L trends, expense breakdowns, and cash-flow forecasting.",
-      "Parsed and normalized CSV/Excel QuickBooks exports into a unified data model with TypeScript utility functions.",
-      "Implemented client-side filtering by date range, account category, and custom tags with URL-synced state.",
-    ],
-    techStack: ["React", "TypeScript", "Chart.js", "Tailwind CSS"],
-    links: [
-      {
-        label: "GitHub",
-        url: "https://github.com/realJimJin/quickbooks-dashboard",
-      },
-    ],
-    tags: ["project", "data-viz", "react", "typescript"],
-    category: "project",
+    category: "DevOps & Tools",
+    icon: Cpu,
+    items: ["Docker", "Git", "CI/CD", "Vercel", "Linux"],
   },
 ];
 
-export const siteConfig = {
-  name: "Jim Jin",
-  role: "Software Engineer",
-  summary:
-    "I build reliable, user-facing software and contribute to open-source chess infrastructure. Looking for entry-level SWE roles where I can ship product and grow fast.",
-  email: "jimjin@example.com",
-  github: "https://github.com/realJimJin",
-  linkedin: "https://www.linkedin.com/in/guixuanjin/",
-  resumeUrl: "/Jim_Jin_Resume_2026.pdf",
-};
+export const EXPERIENCE = [
+  {
+    company: "Lichess.org",
+    role: "Open-Source Contributor",
+    period: "2024 - Present",
+    description:
+      "Active contributor to the largest free and open-source chess platform serving 10M+ monthly users. Merged 10+ pull requests across the Scala/Play backend and TypeScript frontend, improving UI components and game logic. Collaborated asynchronously with maintainers via GitHub code reviews.",
+    technologies: ["Scala", "Play Framework", "TypeScript", "MongoDB", "WebSockets"],
+  },
+  {
+    company: "Hublyst.pro (Freelance)",
+    role: "Full-Stack Developer",
+    period: "2024",
+    description:
+      "Designed and shipped a full-stack marketplace web app connecting Boston-area renters with verified sublets and roommates. Built end-to-end with Django and PostgreSQL — from auth flows to listing CRUD, search/filter, and messaging. Implemented responsive, mobile-first UI and deployed to production.",
+    technologies: ["Django", "Python", "PostgreSQL", "HTML/CSS", "JavaScript"],
+  },
+];
+
+export const PROJECTS = [
+  {
+    title: "Lichess Contributions",
+    description:
+      "10+ merged PRs to the world's largest free chess platform. Worked on Scala backend services, TypeScript frontend components, and MongoDB aggregation pipelines.",
+    image: "/images/lichess.png",
+    tags: ["Scala", "TypeScript", "MongoDB", "Open Source"],
+    demoUrl: "https://lichess.org",
+    repoUrl: "https://github.com/lichess-org/lila/pulls?q=is%3Apr+author%3ArealJimJin",
+  },
+  {
+    title: "Hublyst.pro",
+    description:
+      "Boston sublet & roommate marketplace. Full-stack Django app with auth, listing management, search/filter, image uploads, and user profiles.",
+    image: "/images/hublyst.png",
+    tags: ["Django", "Python", "PostgreSQL"],
+    demoUrl: "https://hublyst.pro",
+    repoUrl: "",
+  },
+  {
+    title: "IMLEM Team Manager",
+    description:
+      "Web app for managing Intermediate Math League teams, schedules, and scoring. Role-based auth for coaches, real-time score tracking, and normalized PostgreSQL schema.",
+    image: "",
+    tags: ["React", "Node.js", "PostgreSQL", "Docker"],
+    demoUrl: "",
+    repoUrl: "https://github.com/realJimJin/imlem-team-manager",
+  },
+  {
+    title: "QuickBooks Dashboard",
+    description:
+      "Interactive analytics dashboard for visualizing small-business financial data. Chart.js visualizations for P&L trends, expense breakdowns, and cash-flow forecasting.",
+    image: "",
+    tags: ["React", "TypeScript", "Chart.js", "Tailwind CSS"],
+    demoUrl: "",
+    repoUrl: "https://github.com/realJimJin/quickbooks-dashboard",
+  },
+];
