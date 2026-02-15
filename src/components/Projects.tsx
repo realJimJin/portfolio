@@ -36,7 +36,15 @@ export function Projects() {
               className="group bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-md border border-slate-100 dark:border-slate-800 hover:shadow-xl transition-all duration-300 flex flex-col h-full"
             >
               <div className="relative overflow-hidden aspect-video">
-                {project.image ? (
+                {project.image && project.image.endsWith(".svg") ? (
+                  <div className="w-full h-full bg-white dark:bg-slate-200 flex items-center justify-center p-10">
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="max-h-24 w-auto transition-transform duration-500 group-hover:scale-110"
+                    />
+                  </div>
+                ) : project.image ? (
                   <ImageWithFallback
                     src={project.image}
                     alt={project.title}

@@ -16,8 +16,12 @@ export function About() {
             viewport={{ once: true }}
             className="relative"
           >
-            <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl bg-slate-100 dark:bg-slate-800 aspect-square flex items-center justify-center">
-              <span className="text-sm text-slate-400 uppercase tracking-widest">Your Photo</span>
+            <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl">
+              <img
+                src="/images/profile.jpg"
+                alt="Jim Jin"
+                className="w-full h-auto object-cover rounded-2xl transition-transform hover:scale-105 duration-500"
+              />
             </div>
             <div className="absolute -top-10 -left-10 w-40 h-40 bg-indigo-100 dark:bg-indigo-900/30 rounded-full blur-3xl -z-10" />
             <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-purple-100 dark:bg-purple-900/30 rounded-full blur-3xl -z-10" />
@@ -44,8 +48,11 @@ export function About() {
                 culture.
               </p>
               <p>
-                When I&apos;m not coding, you can find me playing chess, exploring new technologies,
-                or contributing to open-source projects.
+                Outside of engineering, I run chess and math after-school programs at a private
+                school in Cambridge. I plan curriculum, coordinate logistics, and communicate
+                with students, parents, and staff—experience that&apos;s strengthened my ability
+                to explain complex ideas clearly, stay organized under constraints, and lead
+                projects with high ownership.
               </p>
             </div>
 
