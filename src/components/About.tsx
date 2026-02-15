@@ -50,7 +50,7 @@ export function About() {
               <p>
                 Outside of engineering, I run chess and math after-school programs at a private
                 school in Cambridge. I plan curriculum, coordinate logistics, and communicate
-                with students, parents, and staff—experience that&apos;s strengthened my ability
+                with students, parents, and staff - experience that's strengthened my ability
                 to explain complex ideas clearly, stay organized under constraints, and lead
                 projects with high ownership.
               </p>

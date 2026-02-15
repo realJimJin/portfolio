@@ -4,8 +4,8 @@ export const PERSONAL_INFO = {
   name: "Jim Jin",
   title: "Software Engineer",
   subtitle:
-    "Vibe coder & full-stack developer. I steer AI coding agents to ship real products fast. Open-source contributor to Lichess. Looking for entry-level SWE roles where I can build and grow.",
-  bio: "I'm a vibe coder—I steer AI coding agents to build and ship real products fast. I'm strongest in full-stack web development and enjoy working in real production codebases—shipping features, fixing bugs, and improving reliability. I've contributed 10+ merged PRs to Lichess, working across Scala and TypeScript, and I've also shipped and maintain a production marketplace app for a freelance client. I like clean code, fast iteration, and building UI that feels polished and responsive.",
+    "Vibe coder and full-stack developer. I steer AI coding agents to ship real products fast. Open-source contributor to Lichess. Looking for entry-level SWE roles where I can build and grow.",
+  bio: "I'm a vibe coder - I steer AI coding agents to build and ship real products fast. I'm strongest in full-stack web development and enjoy working in real production codebases - shipping features, fixing bugs, and improving reliability. I've contributed 10+ merged PRs to Lichess, working across Scala and TypeScript, and I've also shipped and maintain a production marketplace app for a freelance client. I like clean code, fast iteration, and building UI that feels polished and responsive.",
   location: "Boston, MA",
   email: "jimjin135@gmail.com",
   resumeUrl: "/Jim_Jin_Resume_2026.pdf",
